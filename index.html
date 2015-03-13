@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Gist by RevoHub</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Gist</h1>
+        <p>Gist HTML Preview</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/RevoHub/gist" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/RevoHub/gist/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/RevoHub/gist/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h2>
+<a id="github--bitbucket-html-preview" class="anchor" href="#github--bitbucket-html-preview" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub &amp; BitBucket HTML Preview</h2>
+
+<p>Many GitHub repositories don't use GitHub Pages to host their HTML files. <strong>GitHub &amp; BitBucket HTML Preview</strong> allows you to render those files without cloning or downloading whole repositories. It is a  client-side solution and does not involve any third party hosting servers (except for Yahoo! Query Language to fetch assets).</p>
+
+<p>If you try to open raw versions of any HTML, CSS or JS files in a web browser directly from GitHub, all you will see are sources. GitHub forces them to use the "text/plain" content-type, so they cannot be interpreted. This script overrides it by using Yahoo! Query Language.</p>
+
+<p>In order to use it, just prepend this fragment to the URL of any HTML file: <strong><a href="http://htmlpreview.github.io/?">http://htmlpreview.github.io/?</a></strong></p>
+
+<p>E.g.:
+<a href="http://htmlpreview.github.io/?https://raw.github.com/twbs/bootstrap/gh-pages/2.3.2/index.html">http://htmlpreview.github.io/?https://raw.github.com/twbs/bootstrap/gh-pages/2.3.2/index.html</a>
+<a href="http://htmlpreview.github.io/?https://github.com/documentcloud/backbone/blob/master/examples/todos/index.html">http://htmlpreview.github.io/?https://github.com/documentcloud/backbone/blob/master/examples/todos/index.html</a></p>
+
+<p>What it does is load HTML using YQL, then process all links, frames, scripts and styles, and load each of them using YQL, so they can be evaluted in the browser. Here is the workflow:</p>
+
+<pre><code>HTMLPreview.init() -&gt; HTMLPreview.send(HTML) -&gt; YQL fetch HTML -&gt; HTMLPreview.loadHTML(data) -&gt; HTMLPreview.replaceAssets() -&gt; HTMLPreview.send(CSS) -&gt; YQL fetch CSS -&gt; HTMLPreview.loadCSS(data) -&gt; HTMLPreview.send(JS) -&gt; YQL fetch JS -&gt; HTMLPreview.loadJS(data)
+</code></pre>
+
+<p><strong>GitHub &amp; BitBucket HTML Preview</strong> was tested under Google Chrome, Apple Safari and Mozilla Firefox, and it should work with majority of websites, not only GitHub &amp; BitBucket.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/RevoHub">RevoHub</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
